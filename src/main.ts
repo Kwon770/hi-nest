@@ -1,3 +1,5 @@
+// NestJS have 'main.ts'. This name must not be changed
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 

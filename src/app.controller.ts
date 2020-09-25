@@ -9,4 +9,11 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  // It is like get router of express
+  // Decorator must be on function or class
+  @Get('/hey')
+  sayHey(): string {
+    return 'hey, dude';
+  }
 }
