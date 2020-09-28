@@ -14,6 +14,6 @@ export class AppController {
   // Decorator must be on function or class
   @Get('/hey')
   sayHey(): string {
-    return 'hey, dude';
+    return this.appService.getHey();
   }
 }

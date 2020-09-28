@@ -43,6 +43,8 @@ export class AppModule {}
 
 ## Controller
 
+- `@Controller()`: Decorator to make class Controller
+
 - `@Get`: It is like `get` router of express. Run function when there is GET request from specific url
 
 ```ts
@@ -62,5 +64,44 @@ export class AppController {
   sayHey(): string {
     return 'hey, dude';
   }
+}
+```
+
+<br/>
+<br/>
+
+## Services
+
+- `@Injectable()`: Decorator to make class Servcies
+
+```ts
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class AppService {
+  getHello(): string {
+    return 'Hello World!';
+  }
+  getHey(): string {
+    return 'hey, dude';
+  }
+}
+```
+
+- `this.appService.getHello()`: Get function of service by Service what is given from constructor
+
+```ts
+import { AppService } from './app.service';
+
+// Controller
+{
+  constructor(private readonly appService: AppService) {}
+
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
+
+  // ...
 }
 ```
